@@ -12,4 +12,9 @@ app.get("/", (_, response)=>{ // route for our "homepage"
     response.send("Welcome to Animania")
 })
 
+// catch all for request that did not match any route(method & paths)
+app.get("*",(_, res)=>{
+    res.status(404).send("The request you are looking for doesn't exist.")
+} )
+
 module.exports = app;
