@@ -23,7 +23,7 @@ animes.get("/:id", (req, res) => {
     // since req.params is an object we can destructure the param we are in need of
     const anime = animesArr.find((anime) => anime.id === Number(id)); // if find does not find an element that meets the conditional it returns undefined
     if (anime) {
-      // if anime is truthy (it is undefined)
+      // if anime is truthy (it is not undefined)
       res.status(200).json(anime);
     } else {
       throw "could not find anime"; // if the anime is not found we forced an error to land in the catch and respond with the error
